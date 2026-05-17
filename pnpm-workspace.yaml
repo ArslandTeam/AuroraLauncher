@@ -1,0 +1,18 @@
+packages:
+  - packages/*
+
+allowBuilds:
+  '@swc/core': false
+  esbuild: false
+  grpc-tools: false
+  protobufjs: false
+  sqlite3: false
+
+onlyBuiltDependencies:
+  - "@parcel/watcher"
+  - "@swc/core"
+  - bufferutil
+  - electron
+  - esbuild
+  - javascript-obfuscator
+  - utf-8-validate

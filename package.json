@@ -5,8 +5,8 @@
         "packages/*"
     ],
     "scripts": {
-        "dev": "concurrently -i -n server,launcher,core,api \"npm:dev -w packages/server\" \"npm:dev -w packages/launcher\" \"npm:dev -w packages/core\" \"npm:dev -w packages/api\"",
-        "build:libs": "npm run build -w packages/core -w packages/api"
+        "dev": "concurrently -i -n server,launcher,core,api \"pnpm --filter @aurora-launcher/server run dev\" \"pnpm --filter @aurora-launcher/launcher run dev\" \"pnpm --filter @aurora-launcher/core run dev\" \"pnpm --filter @aurora-launcher/api run dev\"",
+        "build:libs": "pnpm --filter @aurora-launcher/core --filter @aurora-launcher/api build"
     },
     "devDependencies": {
         "concurrently": "^9.1.0"

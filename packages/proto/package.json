@@ -19,18 +19,18 @@
         "url": "https://github.com/AuroraTeam/AuroraAPI/issues"
     },
     "homepage": "https://github.com/AuroraTeam/AuroraAPI#readme",
-    "dependencies": {
-
-    },
     "devDependencies": {
         "grpc-tools": "^1.12.4",
-        "ts-proto": "^1.181.1",
-        "typescript": "^5.5.4"
+        "ts-proto": "^2.11.8",
+        "typescript": "^6.0.3"
     },
     "importSort": {
         ".js, .mjs, .jsx, .ts, .tsx": {
             "style": "module",
             "parser": "typescript"
         }
+    },
+    "dependencies": {
+        "protobufjs": "^8.2.0"
     }
 }

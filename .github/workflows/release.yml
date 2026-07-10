@@ -2,7 +2,7 @@ name: LaunchServer - Release Build
 
 on:
   push:
-    branches: [0.0.4+mirrors]
+    branches: [0.0.5-arslanteam]
 
 jobs:
   build:
@@ -14,19 +14,19 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Get version value, set to env
         run: echo "PACKAGE_VERSION=v$(node -p "require('./packages/server/package.json').version")" >> $GITHUB_ENV
 
       - name: Download dependencies
-        run: npm i
+        run: pnpm i
 
       - name: Build Libraries
         run: |
-          npm run build:libs
-          npm run build:prod -w packages/server
-          npm run build:bin -w packages/server
+          pnpm run build:libs
+          pnpm run build:prod -w packages/server
+          pnpm run build:bin -w packages/server
 
       - name: Upload release
         uses: softprops/action-gh-release@v2

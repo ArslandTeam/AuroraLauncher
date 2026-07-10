@@ -27,8 +27,8 @@ jobs:
       - name: Build Libraries
         run: |
           pnpm run build:libs
-          pnpm run build:prod -w packages/server
-          pnpm run build:bin -w packages/server
+          pnpm --filter @aurora-launcher/server run build:prod
+          pnpm --filter @aurora-launcher/server run build:bin
 
       - name: Upload release
         uses: softprops/action-gh-release@v2

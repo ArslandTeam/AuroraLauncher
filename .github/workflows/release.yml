@@ -1,8 +1,7 @@
 name: LaunchServer - Release Build
 
 on:
-  push:
-    branches: [0.0.5-arslanteam]
+  workflow_dispatch:
 
 jobs:
   build:
